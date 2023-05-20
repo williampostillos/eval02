@@ -15,7 +15,7 @@ if (!empty($_POST['email']) && !empty($_POST['contraseña'])) {
 
     if (count($results) > 0 && password_verify($_POST['contraseña'], $results['contraseña'])) {
         $_SESSION['idUsuario'] = $results['idUsuario'];
-        header('Location: /login.php');
+        header('Location: controlador_usuario/vista_usuario.php');
     } else {
         $message = 'Contraseña o email incorrectos';
     }
